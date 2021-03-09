@@ -1,0 +1,25 @@
+name: STAC Spatio-Temporal Periodic Extent Extension
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    # allows CI PR runs only from external repos
+    # in other cases push event is used to run it
+    if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name != 'azavea/stac-periodic-extent'
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+    - name: Install dependencies
+      run: |
+        pip install jsonschema
+    - name: Validate STAC Spatio-Temporal Periodic Extent Extension
+      run: |
+        jsonschema -i ./examples/classic.json ./json-schema/schema.json && \
+        jsonschema -i ./examples/periodic.json ./json-schema/schema.json
