@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "extent-schema.json#",
-  "title": "Spatio-Temporal Extent Extension",
-  "description": "Spatio-Temporal Extent Extension. It is based on the STAC Collection Spec.",
+  "title": "Spatio-Temporal Periodic Extent Extension",
+  "description": "Spatio-Temporal Periodic Extent Extension. It is based on the STAC Collection Spec.",
   "allOf": [
     {
       "$ref": "#/definitions/extent"
