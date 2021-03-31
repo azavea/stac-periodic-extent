@@ -1,4 +1,4 @@
-name: STAC Spatio-Temporal Periodic Extent Extension
+name: CI
 
 on: [push, pull_request]
 
