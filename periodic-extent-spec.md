@@ -51,7 +51,7 @@ The object describes the temporal extents of the Collection.
 
 | Element  | Type               | Description                                                           |
 | -------- | ------------------ | --------------------------------------------------------------------- |
-| interval | \[\[string\|[Periodic Interval](#periodic-interval)\|null]] | **REQUIRED.** Potential *temporal extents* covered by the Collection. |
+| interval | \[\[string\|null] \| \[[Periodic Interval](#periodic-interval)]] | **REQUIRED.** Potential *temporal extents* covered by the Collection. |
 
 **interval**: Each outer array element can be a separate temporal extent, but it is recommended to only use multiple temporal extents if a union of them would then include a large uncovered time span (e.g. only having data for the years 2000, 2010 and 2020).
 
