@@ -1,4 +1,4 @@
-# STAC Spatio-Temporal Periodic Extent Extension [![STAC Spatio-Temporal Periodic Extent Extension CI](https://github.com/azavea/stac-periodic-extent/workflows/STAC%20Spatio-Temporal%20Periodic%20Extent%20Extension/badge.svg)](https://github.com/azavea/stac-periodic-extent/actions)
+# STAC Spatio-Temporal Periodic Extent Extension [![CI](https://github.com/azavea/stac-periodic-extent/workflows/CI/badge.svg)](https://github.com/azavea/stac-periodic-extent/actions)
 
 The spec is located [here](./periodic-extent-spec.md).
 
