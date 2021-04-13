@@ -51,25 +51,15 @@ The object describes the temporal extents of the Collection.
 
 | Element  | Type               | Description                                                           |
 | -------- | ------------------ | --------------------------------------------------------------------- |
-| interval | \[\[string\|null] \| \[[Periodic Interval](#periodic-interval)]] | **REQUIRED.** Potential *temporal extents* covered by the Collection. |
+| interval | \[\[string\|null]] | **REQUIRED.** Potential *temporal extents* covered by the Collection. |
+| period   | string             | **OPTIONAL.** ISO 8601:1988(E) compilant period: PnYnMnD |
 
 **interval**: Each outer array element can be a separate temporal extent, but it is recommended to only use multiple temporal extents if a union of them would then include a large uncovered time span (e.g. only having data for the years 2000, 2010 and 2020).
+**period**: Is an optional field. Period is represented by ISO 8601:1988(E) compilant string.
 
 Each inner array consists of exactly two dates and times. Each date and time MUST be formatted according to [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339#section-5.6). The temporal reference system is the Gregorian calendar.
 
 Open date ranges are supported by setting either the start or the end time to `null`. Example for data from the beginning of 2019 until now: `[["2009-01-01T00:00:00Z", null]]`. 
-
-###### Interval example
-
-##### Periodic Interval
-
-| Element | Type         | Description                                                          |
-| ------- | ------------ | -------------------------------------------------------------------- |
-| range   | \[\[string\|null]] | **REQUIRED.** Potential *temporal extents* covered by the Collection. |
-| period  | string | **REQUIRED.** ISO 8601:1988(E) compilant period: PnYnMnD |
-
-**range**: Behaves like the interval field in the non periodic case.
-**period**: Is a required field. Period is represented by ISO 8601:1988(E) compilant string.
 
 #### Spatio-Temporal Extent examples
 
@@ -88,14 +78,12 @@ Open date ranges are supported by setting either the start or the end time to `n
     ]
   },
   "temporal": {
+    "period": "P1M",
     "interval": [
-      {
-        "range": [
-          "2018-05-01T00:00:00Z",
-          "2018-08-01T00:00:00Z"
-        ],
-        "period": "P1M"
-      }
+      [
+        "2018-05-01T00:00:00Z",
+        "2018-08-01T00:00:00Z"
+      ]
     ]
   }
 }
