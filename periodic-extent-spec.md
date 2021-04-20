@@ -52,10 +52,10 @@ The object describes the temporal extents of the Collection.
 | Element  | Type               | Description                                                           |
 | -------- | ------------------ | --------------------------------------------------------------------- |
 | interval | \[\[string\|null]] | **REQUIRED.** Potential *temporal extents* covered by the Collection. |
-| period   | string             | **OPTIONAL.** ISO 8601:1988(E) compilant period: PnYnMnD |
+| period   | string             | **REQUIRED.** ISO 8601:1988(E) compilant period: PnYnMnD |
 
 **interval**: Each outer array element can be a separate temporal extent, but it is recommended to only use multiple temporal extents if a union of them would then include a large uncovered time span (e.g. only having data for the years 2000, 2010 and 2020).
-**period**: Is an optional field. Period is represented by ISO 8601:1988(E) compilant string.
+**period**: Period is represented by an ISO 8601:1988(E) compilant string.
 
 Each inner array consists of exactly two dates and times. Each date and time MUST be formatted according to [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339#section-5.6). The temporal reference system is the Gregorian calendar.
 
